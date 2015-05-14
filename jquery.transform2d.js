@@ -54,6 +54,9 @@ while ( i-- ) {
 		continue;
 	}
 }
+// simple hack for mobile
+// always modify "transform" instead of "prefix-transform" without "transform" as same. Eg: transform: translate(0px,0px), but -webkit-transform is already set to "translate(10px,10px)"
+supportProperty=_transform;
 // IE678 alternative
 if ( !supportProperty ) {
 	$.support.matrixFilter = supportMatrixFilter = divStyle.filter === "";
